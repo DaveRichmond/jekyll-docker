@@ -11,7 +11,7 @@ RUN bundle install \
 		--with=${BUILD_ENV} && \
 	rm Gemfile
 
-FROM ruby:2.7
+FROM ruby:2.7-slim
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY bin/ /usr/local/bin
 
